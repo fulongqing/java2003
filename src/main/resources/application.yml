@@ -1,0 +1,24 @@
+server:
+  port:
+    8088
+spring:
+  application:
+    name: My Demo SSMRT
+  thymeleaf:
+    cache: false  # �ٷ������ڿ���ʱ������ر�
+  redis:
+    database: 0             # Redis���ݿ�������Ĭ��Ϊ0��
+    host: 127.0.0.1         # Redis��������ַ
+    port: 6379              # Redis���������Ӷ˿�
+    password:               # Redis�������������루Ĭ��Ϊ�գ�
+#    timeout: 1000           # ���ӳ�ʱʱ�䣨���룩
+    jedis:
+      pool:
+        max-active: 8       # ���ӳ������������ʹ�ø�ֵ��ʾû�����ƣ�
+#        max-wait: -1        # ���ӳ���������ȴ�ʱ�䣨ʹ�ø�ֵ��ʾû�����ƣ�
+        max-idle: 8         # ���ӳ��е�����������
+  datasource:
+    url: jdbc:mysql://localhost:3306/smbms?autoReconnect=true&useSSL=false&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
